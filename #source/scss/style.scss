@@ -1,0 +1,745 @@
+//<МИКСИНЫ>===============================================================================================
+@import "mixins.scss";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Mulish&display=swap");
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "DM Sans";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth: 320px;
+$mw: 1070;
+$md1: $mw + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+$md5: 395.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null.scss";
+body {
+	background-color: #f2f2f2;
+	color: #000;
+	font-size: 14px;
+	&.lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	&.loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	max-width: $mw + px;
+	margin: 0 auto;
+	width: 100%;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+@import "header.scss";
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//< Grow >====================================================================================================
+
+.grow {
+	padding: 100px 0px 70px 0px;
+	@media (max-width: $md3+px) {
+		padding: 50px 0px 10px 0px;
+	}
+	@media (max-width: $md4+px) {
+		padding: 25px 0px 0px 0px;
+	}
+	&__row {
+		@include flexbox();
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__content {
+		max-width: 462px;
+		margin: 0px 74px 0px 0px;
+		@media (max-width: $md1+px) {
+			padding: 50px 0px 0px 0px;
+		}
+		@media (max-width: $md2+px) {
+			max-width: 370px;
+			padding: 15px 0px 0px 0px;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 40px 0px;
+			max-width: 100%;
+			text-align: center;
+		}
+	}
+
+	&__title {
+		font-size: 80px;
+		letter-spacing: -2.5px;
+		font-weight: 700;
+		line-height: 77px;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md2+px) {
+			font-size: 60px;
+			line-height: 60px;
+			margin: 0px 0px 20px 0px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 60px;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 50px;
+		}
+	}
+
+	&__text {
+		font-family: Mulish;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 30px;
+		letter-spacing: -0.62px;
+		color: #696871;
+		margin: 0px 0px 50px 0px;
+		@media (max-width: $md2+px) {
+			font-size: 18px;
+			margin: 0px 0px 30px 0px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 17px;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 16px;
+		}
+	}
+
+	&__buttons {
+		@include flexbox();
+		align-items: center;
+		@media (max-width: $md3+px) {
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+	&__button {
+		@media (max-width: $md1+px) {
+			margin-left: 0;
+		}
+	}
+
+	&__link {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+		border: 1px solid #e7e7e7;
+		border-radius: 50%;
+		margin: 0px 0px 0px 40px;
+		&:hover {
+			border: 1px solid #5454d4;
+			@include anim(0.3s, 0s);
+		}
+		@media (max-width: $md3+px) {
+			margin: 0;
+		}
+	}
+
+	&__image {
+		@media (max-width: $md3+px) {
+			justify-content: center;
+		}
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			@media (max-width: $md4+px) {
+				height: 321.34px;
+			}
+		}
+	}
+}
+
+.btn--blue {
+	background-color: #5454d4;
+	margin-left: 0;
+	@media (max-width: $md3+px) {
+		margin: 0px 0px 20px 0px;
+	}
+	&:hover {
+		background-color: #060681;
+		@include anim(0.3s, 0s);
+	}
+}
+
+//< Logo >====================================================================================================
+
+.logo {
+	padding: 75px 0px 55px 0px;
+
+	@media (max-width: $md3+px) {
+		padding: 25px 0px;
+	}
+	&__row {
+		margin: 0px -5px;
+		@include flexbox();
+		justify-content: space-between;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+	&__column {
+		padding: 0px 5px;
+		@media (max-width: $md3+px) {
+			padding: 30px;
+		}
+		@media (max-width: $md4+px) {
+			margin: 0px 0px 10px 0px;
+			padding: 20px;
+			width: 100%;
+			text-align: center;
+			margin: 0;
+		}
+	}
+}
+
+//< Index >====================================================================================================
+
+.index {
+	padding: 90px 0px 40px 0px;
+	&__row {
+		@include flexbox();
+		align-items: center;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__image {
+		@media (max-width: $md3+px) {
+			margin: 0px 0px 20px 0px;
+		}
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			@media (max-width: $md4+px) {
+				height: 321.34px;
+			}
+		}
+	}
+
+	&__content {
+		padding: 0px 97px 0px 20px;
+		margin: 0px 0px 0px 145px;
+		max-width: 556px;
+		@media (max-width: $md2+px) {
+			max-width: 330px;
+			padding: 50px 0px 0px 0px;
+			margin: 0px 0px 0px 150px;
+		}
+		@media (max-width: $md3+px) {
+			max-width: 100%;
+			margin: 0;
+			text-align: center;
+			padding: 0;
+		}
+	}
+
+	&__title {
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 57px;
+		letter-spacing: -1.5px;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md2+px) {
+			font-size: 40px;
+			margin: 0px 0px 20px 0px;
+			line-height: 37px;
+		}
+	}
+
+	&__text {
+		font-family: Mulish;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 30px;
+		letter-spacing: -0.6px;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md2+px) {
+			font-size: 18px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 17px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 16px;
+		}
+	}
+
+	&__learn {
+		font-size: 17px;
+		font-weight: 700;
+		line-height: 22px;
+		letter-spacing: -0.5px;
+		color: #5454d4;
+		&:hover {
+			color: #d6411b;
+			@include anim(0.3s, 0s);
+		}
+	}
+}
+
+//< Metrics >====================================================================================================
+
+.metrics {
+	padding: 90px 0px 40px 0px;
+	@media (max-width: $md2+px) {
+	}
+	@media (max-width: $md4+px) {
+	}
+	&__row {
+		@include flexbox();
+		align-items: center;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+			text-align: center;
+		}
+	}
+
+	&__content {
+		max-width: 459px;
+		@media (max-width: $md2+px) {
+			max-width: 390px;
+			padding: 80px 0px 0px 0px;
+		}
+		@media (max-width: $md3+px) {
+			max-width: 100%;
+			order: 2;
+			padding: 0;
+		}
+	}
+
+	&__title {
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 57px;
+		letter-spacing: -1.5px;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md2+px) {
+			font-size: 40px;
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__text {
+		font-family: Mulish;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 30px;
+		letter-spacing: -0.6px;
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md2+px) {
+			font-size: 18px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 17px;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 16px;
+		}
+	}
+
+	&__learn {
+		font-size: 17px;
+		font-weight: 700;
+		line-height: 22px;
+		letter-spacing: -0.5px;
+		color: #5454d4;
+		&:hover {
+			color: #d6411b;
+			@include anim(0.3s, 0s);
+		}
+	}
+
+	&__image {
+		margin: 0px 0px 0px 158px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 0px 90px;
+		}
+		@media (max-width: $md3+px) {
+			order: 1;
+			margin: 0px 0px 20px 0px;
+		}
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			@media (max-width: $md4+px) {
+				height: 321.34px;
+			}
+		}
+	}
+}
+
+//< Audit >====================================================================================================
+
+.audit {
+	padding: 70px 0px 90px 0px;
+
+	@media (max-width: $md2+px) {
+		padding: 80px 0px;
+	}
+	@media (max-width: $md3+px) {
+		padding: 40px 0px;
+	}
+
+	&__row {
+		@include flexbox();
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+	&__item {
+		flex: 0 1 33.333%;
+		margin: 0px 0px 0px 75px;
+		text-align: center;
+		&:nth-child(1) {
+			margin-left: 0;
+		}
+		@media (max-width: $md3+px) {
+			flex: 0 0 50%;
+			&:nth-child(1) {
+				margin: 0px 0px 20px 0px;
+			}
+			&:nth-child(2) {
+				margin: 0px 0px 20px 0px;
+			}
+			&:nth-child(3) {
+				margin: 0;
+			}
+		}
+		@media (max-width: $md4+px) {
+			flex: 1 1 100%;
+			padding: 0;
+			&:nth-child(1) {
+				margin: 0px 0px 20px 0px;
+			}
+			&:nth-child(2) {
+				margin: 0px 0px 20px 0px;
+			}
+		}
+	}
+
+	&__icon {
+		padding: 0px 0px 0px 20px;
+		@media (max-width: $md4+px) {
+			&:nth-child(1) {
+				padding: 0px 0px 0px 50px;
+			}
+		}
+		img {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__icon--center {
+		padding: 0px 0px 0px 40px;
+	}
+
+	&__img {
+		margin: 0px 0px 12px 0px;
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 36px;
+		letter-spacing: -0.7px;
+		margin: 0px 0px 20px 0px;
+		color: #19191b;
+	}
+
+	&__text {
+		font-family: Mulish;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: -0.5px;
+		color: #696871;
+		@media (max-width: $md3+px) {
+		}
+	}
+}
+
+//< Future >====================================================================================================
+
+.future {
+	padding: 60px 0px 40px 0px;
+	@media (max-width: $md4+px) {
+	}
+	&__row {
+		@include flexbox();
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&__title {
+		max-width: 523px;
+		font-size: 60px;
+		font-weight: 700;
+		line-height: 70px;
+		letter-spacing: -1.8px;
+		@media (max-width: $md2+px) {
+			font-size: 50px;
+			line-height: 55px;
+		}
+		@media (max-width: $md3+px) {
+			text-align: center;
+			font-size: 40px;
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__button {
+		@include flexbox();
+		padding: 15px 20px 0px 0px;
+		@media (max-width: $md2+px) {
+			padding: 0;
+			margin: 0px 0px 0px 20px;
+		}
+		@media (max-width: $md3+px) {
+			margin: 0;
+		}
+	}
+
+	&__link {
+		&_l {
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 21px;
+			letter-spacing: -0.5px;
+			color: #19191b;
+			padding: 19px 50px;
+			display: inline-block;
+			vertical-align: top;
+			border-radius: 10px 0 0 10px;
+			&:hover {
+				background-color: #5454d4;
+				color: #fff;
+				@include anim(0.3s, 0s);
+			}
+			@media (max-width: $md3+px) {
+				padding: 9px 30px;
+			}
+		}
+
+		&_r {
+			text-align: center;
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 21px;
+			letter-spacing: -0.5px;
+			color: #19191b;
+			padding: 19px 40px;
+			display: inline-block;
+			vertical-align: top;
+			border-radius: 0 10px 10px 0;
+			&:hover {
+				background-color: #5454d4;
+				color: #fff;
+				@include anim(0.3s, 0s);
+			}
+			@media (max-width: $md3+px) {
+				padding: 9px 22.2px;
+			}
+		}
+	}
+}
+
+//< Price >====================================================================================================
+
+.price {
+	padding: 50px 0px;
+	@media (max-width: $md2+px) {
+		padding: 40px 0px;
+	}
+	@media (max-width: $md3+px) {
+		padding: 30px 0px;
+	}
+
+	@media (max-width: $md4+px) {
+		padding: 20px 0px;
+	}
+
+	&__row {
+		@include flexbox();
+		margin: 0px -9px;
+		justify-content: center;
+		@media (max-width: $md2+px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__card {
+		flex: 0 0 33.333%;
+		padding: 0px 9px;
+		@media (max-width: $md3+px) {
+			flex: 0 1 50%;
+			justify-content: center;
+			padding: 10px 0px;
+		}
+		@media (max-width: $md4+px) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__item {
+		text-align: center;
+		padding: 50px 0px 43px 0px;
+		border-radius: 10px;
+
+		&:hover {
+			background-color: #ff7143;
+			box-shadow: 0px 32px 34px rgba(255, 112, 59, 0.317827);
+			@include anim(0.3s, 0s);
+			:nth-child(1) {
+				color: #fff;
+				@include anim(0.3s, 0s);
+			}
+			:nth-child(2) {
+				color: #fff;
+				@include anim(0.3s, 0s);
+			}
+			:nth-child(3) {
+				color: #fff;
+				@include anim(0.3s, 0s);
+			}
+			:nth-child(4) {
+				background-color: #9f3919;
+				@include anim(0.3s, 0s);
+			}
+		}
+	}
+
+	&__title {
+		margin: 0px 0px 20px 0px;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 28px;
+		letter-spacing: -0.5px;
+		color: #1d293f;
+	}
+
+	&__numeral {
+		margin: 0px 0px 12px 0px;
+		font-size: 60px;
+		font-weight: 700;
+		line-height: 56px;
+		letter-spacing: -1px;
+		color: #1d293f;
+		@media (max-width: $md2+px) {
+			font-size: 40px;
+		}
+		span {
+			font-size: 28px;
+			@media (max-width: $md2+px) {
+				font-size: 20px;
+			}
+		}
+	}
+
+	&__text {
+		margin: 0px 0px 36px 0px;
+		font-family: Mulish;
+		font-size: 17px;
+		font-weight: 400;
+		line-height: 50px;
+		letter-spacing: -0.5px;
+		color: #696871;
+	}
+
+	&__button {
+		padding: 19px 100px;
+		cursor: pointer;
+		display: inline-block;
+		border-radius: 10px;
+		background-color: #fff;
+		@media (max-width: $md2+px) {
+			padding: 19px 60px;
+		}
+		@media (max-width: $md4+px) {
+			padding: 19px 90px;
+		}
+		a {
+			font-size: 17px;
+			font-weight: 700;
+			letter-spacing: -0.5px;
+			color: #5454d4;
+		}
+	}
+
+	&__numeral--one {
+		margin: 0px 0px 23px 0px;
+		font-size: 60px;
+		font-weight: 700;
+		line-height: 56px;
+		letter-spacing: -1px;
+		color: #1d293f;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 20px 0px;
+			font-size: 40px;
+		}
+	}
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
